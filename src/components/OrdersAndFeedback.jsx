@@ -71,22 +71,22 @@ const customerFeedbacks = [
 
 const OrdersAndFeedbacks = () => (
   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
-    <div className="lg:col-span-2 bg-gray-800 p-4 rounded-lg">
+    <div className="lg:col-span-2 bg-gray-800 p-4 rounded-lg overflow-x-scroll sm:overflow-hidden">
       <div className="text-gray-400 mb-4">Recent Orders</div>
       <div>
         <table className="min-w-full divide-y divide-gray-700">
           <thead>
             <tr>
-              <th className="py-2 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+              <th className="py-2 text-center sm:text-left text-[.6rem] sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
                 Customer
               </th>
-              <th className="py-2 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+              <th className="py-2 text-center sm:text-left text-[.6rem] sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
                 Order No.
               </th>
-              <th className="py-2 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+              <th className="py-2 text-center sm:text-left text-[.6rem] sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
                 Amount
               </th>
-              <th className="py-2 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+              <th className="py-2 text-center sm:text-left text-[.6rem] sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
                 Status
               </th>
             </tr>
@@ -100,13 +100,17 @@ const OrdersAndFeedbacks = () => (
                     alt={order.customer}
                     className="w-8 h-8 rounded-full mr-2"
                   />
-                  <div>{order.customer}</div>
+                  <div className="text-[.6rem] sm:text-sm">
+                    {order.customer}
+                  </div>
                 </td>
-                <td className="py-2">{order.orderNo}</td>
-                <td className="py-2">{order.amount}</td>
-                <td className="py-2">
+                <td className="py-2 text-[.6rem] sm:text-sm">
+                  {order.orderNo}
+                </td>
+                <td className="py-2 text-[.6rem] sm:text-sm">{order.amount}</td>
+                <td className="py-2 text-[.6rem] sm:text-sm">
                   <span
-                    className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                    className={`px-2 py-1 rounded-full text-[.6rem] sm:text-sm font-semibold ${
                       order.status === "Delivered"
                         ? "bg-green-200 text-green-800"
                         : order.status === "Cancelled"
@@ -134,11 +138,13 @@ const OrdersAndFeedbacks = () => (
               className="w-12 h-12 rounded-full"
             />
             <div>
-              <div className="text-gray-300 font-bold">{feedback.name}</div>
+              <div className="text-gray-300 text-[.6rem] sm:text-sm font-bold">
+                {feedback.name}
+              </div>
               <div className="text-yellow-400">
                 {"★".repeat(feedback.rating) + "☆".repeat(5 - feedback.rating)}
               </div>
-              <div className="text-gray-400 text-sm mt-1">
+              <div className="text-gray-400 text-[.6rem] sm:text-sm mt-1">
                 {feedback.feedback}
               </div>
             </div>
