@@ -81,7 +81,7 @@ const OrdersAndFeedbacks = () => (
                 Customer
               </th>
               <th className="py-2 text-center sm:text-left text-[.6rem] sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
-                Order No.
+                Order
               </th>
               <th className="py-2 text-center sm:text-left text-[.6rem] sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
                 Amount
@@ -94,7 +94,7 @@ const OrdersAndFeedbacks = () => (
           <tbody className="bg-gray-800 divide-y divide-gray-700">
             {recentOrders.map((order, index) => (
               <tr key={index}>
-                <td className="py-2 flex items-center">
+                <td className="py-4 flex items-center">
                   <img
                     src={order.avatar}
                     alt={order.customer}
@@ -104,13 +104,13 @@ const OrdersAndFeedbacks = () => (
                     {order.customer}
                   </div>
                 </td>
-                <td className="py-2 text-[.6rem] sm:text-sm">
+                <td className="py-4 px-1 text-[.6rem] sm:text-sm">
                   {order.orderNo}
                 </td>
-                <td className="py-2 text-[.6rem] sm:text-sm">{order.amount}</td>
-                <td className="py-2 text-[.6rem] sm:text-sm">
+                <td className="py-4 text-[.6rem] sm:text-sm">{order.amount}</td>
+                <td className="py-4 text-[.6rem] sm:text-sm">
                   <span
-                    className={`px-2 py-1 rounded-full text-[.6rem] sm:text-sm font-semibold ${
+                    className={`px-2 py-2 rounded-full text-[.6rem] sm:text-sm font-semibold ${
                       order.status === "Delivered"
                         ? "bg-green-200 text-green-800"
                         : order.status === "Cancelled"
@@ -144,7 +144,7 @@ const OrdersAndFeedbacks = () => (
               <div className="text-yellow-400">
                 {"★".repeat(feedback.rating) + "☆".repeat(5 - feedback.rating)}
               </div>
-              <div className="text-gray-400 text-[.6rem] sm:text-sm mt-1">
+              <div className="text-gray-400 text-[.7rem] xl:text-sm mt-1">
                 {feedback.feedback}
               </div>
             </div>
